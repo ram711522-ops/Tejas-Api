@@ -1,0 +1,25 @@
+{
+  "features": [
+    "plant_code",
+    "AMBIENT_TEMPERATURE",
+    "MODULE_TEMPERATURE",
+    "IRRADIATION",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "plant_2_id": 4136001,
+  "deviation_thresholds_kw": {
+    "4135001": 2316.6580602800645,
+    "4136001": 5441.498411371739
+  },
+  "residual_center_kw": {
+    "4135001": 37.68879108688543,
+    "4136001": 80.82806754449848
+  },
+  "relative_rule": {
+    "ratio": 0.5,
+    "min_predicted_kw": 2000
+  },
+  "threshold_rule": "6 x MAD per plant plus relative rule (<0.5 x expected)",
+  "daytime_irradiation": 0.05
+}

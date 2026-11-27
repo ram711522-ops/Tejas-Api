@@ -21,5 +21,11 @@
     "min_predicted_kw": 2000
   },
   "threshold_rule": "6 x MAD per plant plus relative rule (<0.5 x expected)",
-  "daytime_irradiation": 0.05
+  "daytime_irradiation": 0.05,
+  "training_capacity_kw": {
+    "4135001": 27057.12,
+    "4136001": 19505.88
+  },
+  "training_capacity_note": "99th percentile of AC_POWER per training plant in data/processed/solar_processed.csv",
+  "model_version": "svr-pipeline-sklearn-1.8.0"
 }

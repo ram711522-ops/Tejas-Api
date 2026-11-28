@@ -1,0 +1,135 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-5);
+  background-color: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: background-color var(--transition-fast);
+}
+
+.card:hover {
+  background-color: var(--bg-surface-muted);
+}
+
+.accentLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+.lineSuccess {
+  background-color: var(--color-actual);
+}
+
+.lineInfo {
+  background-color: var(--color-predicted);
+}
+
+.lineWarning {
+  background-color: var(--color-warning);
+}
+
+.lineDanger {
+  background-color: var(--color-danger);
+}
+
+.subtleGlow {
+  background-image: radial-gradient(circle at top right, var(--color-accent-soft), transparent 60%);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.iconBox {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.toneSuccess {
+  color: var(--color-success);
+}
+
+.toneWarning {
+  color: var(--color-warning);
+}
+
+.toneDanger {
+  color: var(--color-danger);
+}
+
+.toneInfo {
+  color: var(--color-info);
+}
+
+.valueRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.valueMain {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1.05;
+}
+
+.unit {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.trend {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-surface-muted);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.subtext {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.skeletonValue {
+  height: 32px;
+  width: 110px;
+}
+
+.skeletonSub {
+  height: 14px;
+  width: 150px;
+}

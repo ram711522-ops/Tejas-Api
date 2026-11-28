@@ -1,0 +1,252 @@
+.ribbon {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-topnav);
+  height: var(--topnav-height);
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.brandCluster {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.solarEmblem {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.emblemRing {
+  animation: orbit-slow 24s linear infinite;
+  transform-origin: center;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-primary);
+}
+
+.brandTag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  display: block;
+  margin-top: -2px;
+}
+
+.navRail {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  height: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.navRail::-webkit-scrollbar {
+  display: none;
+}
+
+.navItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.navItem:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.navCode {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  opacity: 0.55;
+}
+
+.navItemActive {
+  color: var(--color-accent-bright);
+}
+
+.navItemActive .navCode {
+  opacity: 1;
+  color: var(--color-accent);
+}
+
+.navItemActive::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent-flare), var(--color-accent-bright));
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.65);
+}
+
+.rightCluster {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.cmdBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface-muted);
+  color: var(--text-secondary);
+  font-size: 11px;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.cmdBtn:hover {
+  border-color: var(--border-accent);
+  color: var(--text-primary);
+}
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.clockChip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+.healthCluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Mobile Dock + Slide-up Sheet */
+.mobileDock {
+  display: none;
+}
+
+.moreSheetBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-overlay);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-end;
+}
+
+.moreSheet {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-strong);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (max-width: 1340px) {
+  .clockChip,
+  .navCode {
+    display: none;
+  }
+
+  .navItem {
+    padding: 0 9px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .brandTag,
+  .cmdLabel {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .ribbon {
+    padding: 0 var(--space-4);
+  }
+
+  .navRail {
+    display: none;
+  }
+
+  .mobileDock {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--mobile-dock-height);
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-strong);
+    z-index: var(--z-dock);
+  }
+
+  .dockLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+    border: none;
+    background: transparent;
+  }
+
+  .dockLinkActive {
+    color: var(--color-accent-bright);
+  }
+}
+
+@media (max-width: 520px) {
+  .healthCluster {
+    display: none;
+  }
+}

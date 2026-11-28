@@ -1,0 +1,69 @@
+.card {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--border-strong);
+  background-color: var(--bg-surface);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.card:hover {
+  background-color: var(--bg-surface-muted);
+}
+
+.severityHigh {
+  border-left-color: var(--color-severity-high);
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.07), var(--bg-surface) 38%);
+}
+
+.severityMedium {
+  border-left-color: var(--color-warning);
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.07), var(--bg-surface) 38%);
+}
+
+.severityLow {
+  border-left-color: var(--border-strong);
+  background: var(--bg-surface);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plantCode {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.message {
+  font-size: 12.5px;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
